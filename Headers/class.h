@@ -8,6 +8,8 @@
 #ifndef __CLASS_H
 #define __CLASS_H
 
+//#include "enum.h"
+
 #include <string>
 #include <vector>
 #include <iostream>
@@ -70,10 +72,25 @@ class Kategori{
 
 class NyTing{
     private:
-        int uniktIDnummer; 
+        int uniktIDnummer,
+            selgersKID,
+            pris,
+            antallTilSalgs; 
         string navn,
             beskrivelse;
     public:
+        NyTing();
+        ~NyTing();
+};
+
+class BruktTing : public NyTing {
+    private:
+        int alder;
+        enum Kvalitet kvalitet;
+    public:
+        BruktTing();
+        ~BruktTing();
+
 };
 
 #endif
