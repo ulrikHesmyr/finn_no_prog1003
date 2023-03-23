@@ -8,6 +8,8 @@
 #ifndef __CLASS_H
 #define __CLASS_H
 
+//#include "enum.h"
+
 #include <string>
 #include <vector>
 #include <iostream>
@@ -59,10 +61,40 @@ class Kategorier{
 
 class Kategori{
     private:
-
+        list <NyTing*> nyeTing; //Alle tingene som er til salgs i denne
+                                //kategorien. Disse kan være en blanding av 
+                                //NyTing og BruktTing
+        
     public:
 
 
 };
 
+<<<<<<< HEAD
 #endif
+=======
+class NyTing{
+    private:
+        int uniktIDnummer,
+            selgersKID,
+            pris,
+            antallTilSalgs; 
+        string navn,
+            beskrivelse;
+    public:
+        NyTing();
+        ~NyTing();
+};
+
+class BruktTing : public NyTing {
+    private:
+        int alder;
+        enum Kvalitet kvalitet;
+    public:
+        BruktTing();
+        ~BruktTing();
+
+};
+
+#endif
+>>>>>>> origin
