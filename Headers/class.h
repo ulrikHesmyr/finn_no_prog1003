@@ -1,3 +1,10 @@
+/**
+ *   Header fil for alle classess
+ *
+ *   @file     class.h
+ *   @author   Ulrik, Oliver og Mathilde, NTNU
+ */
+
 #ifndef __CLASS_H
 #define __CLASS_H
 
