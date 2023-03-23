@@ -1,0 +1,14 @@
+Before you start working:
+	- Pull from main branch
+
+After finishing ONE feature
+	- add files 
+	- commit changes
+
+Before going to bed
+	- git push
+	- git checkout main
+	- git merge {branch}
+	- git push
+
+

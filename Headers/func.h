@@ -13,8 +13,6 @@ using namespace std;
  * Skriver menyen for kommandoer som brukes i main
  * 
 */
-void skrivMeny(){
-
-}
+void skrivMeny();
 
 #endif
