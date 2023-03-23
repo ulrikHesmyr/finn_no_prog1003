@@ -16,7 +16,9 @@ class Kunder{
     public:
         Kunder();
         ~Kunder();
-        void nyKunde();//?
+        void lesFraFil();
+        void handling();
+        void skrivTilFil();
 
 };
 
@@ -36,7 +38,6 @@ class Kunde{
     public:
         Kunde();
         ~Kunde();
-        void nyKunde();//?
 };
 
 class Kategorier{
@@ -44,13 +45,16 @@ class Kategorier{
         int sisteNr;
         map <string, Kategori*> kategoriene; //Map med alle unikt navnede Kategori'er
     public:
+        void lesFraFil();
+        void handling(char valg);
+        void skrivTilFil();
 };
 
 class Kategori{
     private:
 
     public:
-        
+
 
 };
 

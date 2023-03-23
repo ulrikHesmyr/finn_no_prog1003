@@ -8,9 +8,9 @@
 
 
 #include <iostream>
-#include "funksjoner.h"
-#include "kunder.h"
-#include "kategorier.h"
+#include "func.h"
+#include "const.h"
+#include "class.h"
 #include "LesData3.h"
 using namespace std;
 
