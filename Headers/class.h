@@ -70,6 +70,9 @@ class Kategori{
 
 };
 
+<<<<<<< HEAD
+#endif
+=======
 class NyTing{
     private:
         int uniktIDnummer,
@@ -94,3 +97,4 @@ class BruktTing : public NyTing {
 };
 
 #endif
+>>>>>>> origin
