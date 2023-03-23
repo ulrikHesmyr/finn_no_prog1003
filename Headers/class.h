@@ -59,10 +59,21 @@ class Kategorier{
 
 class Kategori{
     private:
-
+        list <NyTing*> nyeTing; //Alle tingene som er til salgs i denne
+                                //kategorien. Disse kan være en blanding av 
+                                //NyTing og BruktTing
+        
     public:
 
 
+};
+
+class NyTing{
+    private:
+        int uniktIDnummer; 
+        string navn,
+            beskrivelse;
+    public:
 };
 
 #endif
