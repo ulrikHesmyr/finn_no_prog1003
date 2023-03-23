@@ -2,17 +2,18 @@
  *   Hovedprogrammet for OOP-prosjektet V23 med et Miniatyr-Finn<dot>no
  *      med salg av "Leker og Spill".
  *
- *   @file     MAINV23.CPP
+ *   @file     MAIN.CPP
  *   @author   Frode Haug, NTNU
  */
 
-
-#include <iostream>
-#include "func.h"
-#include "const.h"
 #include "class.h"
+#include "const.h"
+#include "func.h"
 #include "LesData3.h"
+#include <iostream>
+
 using namespace std;
+
 
 
 Kunder     gKundebase;    ///<  Globalt container-objekt med ALLE kundene.
