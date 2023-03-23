@@ -8,10 +8,10 @@
 
 
 #include <iostream>
-#include "../include/funksjoner.h"
-#include "../include/kunder.h"
-#include "../include/kategorier.h"
-#include "../include/LesData3.h"
+#include "funksjoner.h"
+#include "kunder.h"
+#include "kategorier.h"
+#include "LesData3.h"
 using namespace std;
 
 
