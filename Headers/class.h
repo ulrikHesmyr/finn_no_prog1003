@@ -16,8 +16,6 @@
 #include <list>
 #include <map>
 
-using namespace std;
-
 class Kunder{
     private:
         int sisteNr;
@@ -27,7 +25,12 @@ class Kunder{
         ~Kunder();
         void lesFraFil();
         void handling();
-        void skrivTilFil();
+        void skrivTilFil() const;
+        void skrivMeny();
+        void nyKunde();
+        void skrivAlleKunder() const;
+        void skrivKunde() const; 
+        void fjernKunde();
 
 };
 
@@ -56,7 +59,7 @@ class Kategorier{
     public:
         void lesFraFil();
         void handling(char valg);
-        void skrivTilFil();
+        void skrivTilFil() const;
 };
 
 class Kategori{
@@ -70,9 +73,6 @@ class Kategori{
 
 };
 
-<<<<<<< HEAD
-#endif
-=======
 class NyTing{
     private:
         int uniktIDnummer,
@@ -97,4 +97,3 @@ class BruktTing : public NyTing {
 };
 
 #endif
->>>>>>> origin
