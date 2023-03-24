@@ -1,13 +1,30 @@
 /**
- * Fil for alle public voids i klassene
+ * Fil for alle public funksjoner i klassen Kunder
  * 
  * @file class.cpp
  * @author Mathilde, Oliver og Ulrik
 */
 
-#include "class.h"
+#include <iostream>
+#include "kunder.h"
 #include "LesData3.h"
 
+/**
+ * Leser data fra filen KUNDER.DTA
+ * 
+*/
+void Kunder::lesFraFil(){
+
+}
+
+
+/**
+ * Skriver data til filen KUNDER.DTA
+ * 
+*/
+void Kunder::skrivTilFil() const {
+    
+}
 
 /**
  * Håndterer brukerens kommando-valg for kundebasen

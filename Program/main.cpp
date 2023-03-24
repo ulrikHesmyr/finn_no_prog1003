@@ -6,7 +6,8 @@
  *   @author   Frode Haug, NTNU
  */
 
-#include "class.h"
+#include "kunder.h"
+#include "kategorier.h"
 #include "const.h"
 #include "func.h"
 #include "LesData3.h"
