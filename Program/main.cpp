@@ -13,8 +13,6 @@
 #include "LesData3.h"
 #include <iostream>
 
-using namespace std;
-
 
 
 Kunder     gKundebase;    ///<  Globalt container-objekt med ALLE kundene.
@@ -51,6 +49,6 @@ int main()  {
   gKundebase.skrivTilFil();
   gKategoribase.skrivTilFil();
 
-  cout << "\n\n";
+  std::cout << "\n\n";
   return 0;
 }

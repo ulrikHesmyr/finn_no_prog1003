@@ -11,6 +11,21 @@
 
 
 /**
+ * 
+*/
+Kategorier::Kategorier(){
+
+}
+
+
+/**
+ * 
+*/
+Kategorier::~Kategorier(){
+    
+}
+
+/**
  * Leser data fra filen KATEGORIER.DTA
  * 
 */

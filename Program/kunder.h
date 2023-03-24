@@ -1,10 +1,3 @@
-/**
- *   Header fil for Kunder classen
- *
- *   @file     kunder.h
- *   @author   Ulrik, Oliver og Mathilde, NTNU
- */
-
 #ifndef __KUNDER_H
 #define __KUNDER_H
 
