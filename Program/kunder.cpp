@@ -5,9 +5,9 @@
  * @author Mathilde, Oliver og Ulrik
 */
 
+#include "KUNDER.H"
+#include "LESDATA3.H"
 #include <iostream>
-#include "kunder.h"
-#include "LesData3.h"
 
 
 /**

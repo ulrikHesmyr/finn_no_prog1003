@@ -8,7 +8,7 @@
 #ifndef __KATEGORIER_H
 #define __KATEGORIER_H
 
-#include "kategori.h"
+#include "KATEGORI.H"
 #include <iostream>
 #include <map>
 #include <string>

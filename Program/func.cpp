@@ -5,8 +5,8 @@
  * @author Oliver, Mathilde og Ulrik
 */
 
+#include "FUNC.H"
 #include <iostream>
-#include "func.h"
 
 void skrivMeny() {
 	std::cout << "Velg type handling:" << std::endl
