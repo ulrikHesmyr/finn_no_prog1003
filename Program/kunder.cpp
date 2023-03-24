@@ -9,12 +9,28 @@
 #include "kunder.h"
 #include "LesData3.h"
 
+
+/**
+ * 
+*/
+Kunder::Kunder(){
+
+}
+
+
+/**
+ * 
+*/
+Kunder::~Kunder(){
+    
+}
+
 /**
  * Leser data fra filen KUNDER.DTA
  * 
 */
 void Kunder::lesFraFil(){
-
+    std::cout << "hihi";
 }
 
 

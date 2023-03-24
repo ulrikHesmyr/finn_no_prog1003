@@ -18,6 +18,8 @@ class Kategorier{
         int sisteNr;
         std::map <std::string, Kategori*> kategoriene; //Map med alle unikt navnede Kategori'er
     public:
+        Kategorier();
+        ~Kategorier();
         void lesFraFil();
         void handling(char valg);
         void skrivTilFil() const;
