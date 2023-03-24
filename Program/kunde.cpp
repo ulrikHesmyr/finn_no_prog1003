@@ -5,7 +5,7 @@
  *   @author   Ulrik, Oliver og Mathilde, NTNU
  */
 
-#include "kunde.h"
+#include "KUNDE.H"
 
 Kunde::Kunde(){
 

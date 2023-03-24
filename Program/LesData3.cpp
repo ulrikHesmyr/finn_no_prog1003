@@ -13,7 +13,7 @@
 #include <iomanip>             //  setprecision
 #include <cctype>              //  toupper
 #include <cstdlib>             //  atoi, atof
-#include "LesData3.h"          //  Prototypene for denne filens innhold
+#include "LESDATA3.H"          //  Prototypene for denne filens innhold
 
 
 /**

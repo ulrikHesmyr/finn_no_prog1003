@@ -8,7 +8,7 @@
 #ifndef __KATEGORI_H
 #define __KATEGORI_H
 
-#include "nyting.h"
+#include "NYTING.H"
 #include <list>
 
 class Kategori{
