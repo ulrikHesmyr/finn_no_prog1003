@@ -1,8 +1,8 @@
 /**
- *   Header fil for alle classess
+ *   Header fil for klassen NyTing
  *
- *   @file     nyting.h
- *   @author   Ulrik, Oliver og Mathilde, NTNU
+ *   @file    nyting.h
+ *   @author  Mathilde, Oliver og Ulrik, NTNU
  */
 
 #ifndef __NYTING_H

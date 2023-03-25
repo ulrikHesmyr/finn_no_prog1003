@@ -2,7 +2,7 @@
  * Filen som inneholder alle globale funksjoner
  * 
  * @file func.cpp
- * @author Oliver, Mathilde og Ulrik
+ * @author Mathilde, Oliver og Ulrik, NTNU
 */
 
 #include "FUNC.H"
@@ -14,9 +14,4 @@ void skrivMeny() {
 			  << "\t A - Kategori" << std::endl
 			  << "\t T - Ting" << std::endl
 			  << "\t K - Kjop" << std::endl;
-<<<<<<< HEAD:Program/func.cpp
-=======
-
-
->>>>>>> 09f19a8 (smaafiks):Sources/func.cpp
 }

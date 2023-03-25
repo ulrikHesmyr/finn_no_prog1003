@@ -2,7 +2,7 @@
  *   Header fil for Kunde classen
  *
  *   @file     kunde.h
- *   @author   Ulrik, Oliver og Mathilde, NTNU
+ *   @author   Mathilde, Oliver og Ulrik, NTNU
  */
 
 #ifndef __KUNDE_H
