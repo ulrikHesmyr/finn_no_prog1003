@@ -61,7 +61,7 @@ void Kunder::handling(){
             case 'A':  Kunder::skrivAlleKunder();       break;
             case 'S':  Kunder::skrivKunde();            break;
             case 'F':  Kunder::fjernKunde();            break;
-            default:   skrivMeny();                         break;
+            default:   skrivMeny();                     break;
         }
         valgHandlingKunde = lesChar("\nKommando");
     }
