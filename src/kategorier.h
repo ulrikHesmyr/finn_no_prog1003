@@ -2,7 +2,7 @@
  *   Header fil for Kategorier classen
  *
  *   @file     kategorier.h
- *   @author   Ulrik, Oliver og Mathilde, NTNU
+ *   @author   Mathilde, Oliver og Ulrik, NTNU
  */
 
 #ifndef __KATEGORIER_H
