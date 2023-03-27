@@ -8,7 +8,7 @@
 #ifndef __KATEGORIER_H
 #define __KATEGORIER_H
 
-#include "KATEGORI.H"
+#include "kategori.h"
 #include <iostream>
 #include <map>
 #include <string>
@@ -23,6 +23,7 @@ class Kategorier{
         void lesFraFil();
         void handling(char valg);
         void skrivTilFil() const;
+		Kategori* finnKategori(std::string k);
 };
 
 #endif
