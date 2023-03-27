@@ -6,7 +6,10 @@
 */
 
 #include "FUNC.H"
+#include "KUNDER.H"
 #include <iostream>
+
+extern Kunder gKundebase;
 
 void skrivMeny() {
 	std::cout << "Velg type handling:" << std::endl
