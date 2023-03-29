@@ -7,40 +7,41 @@
 	"LESDATA3.H"
 	<iostream>
 
-1679919201 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.h
-	"KUNDE.H"
+1680099327 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.h
+	"kunde.h"
 	<list>
 
-1679935305 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.h
+1680099327 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.h
 	<string>
+	<fstream>
 
-1679919201 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategorier.h
-	"KATEGORI.H"
+1680099322 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategorier.h
+	"kategori.h"
 	<iostream>
 	<map>
 	<string>
 
-1679919201 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategori.h
+1680099327 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategori.h
 	"NYTING.H"
 	<list>
 
-1679919201 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\nyting.h
+1680099322 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\nyting.h
 	<string>
 
 1679919201 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\const.h
 
-1679919201 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\func.h
+1680092976 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\func.h
 
-1679919201 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\lesdata3.h
+1680092976 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\lesdata3.h
 
-1679919201 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\func.cpp
+1680092991 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\func.cpp
 	"FUNC.H"
 	"KUNDER.H"
 	<iostream>
 
-1679919201 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategori.cpp
+1680092976 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategori.cpp
 
-1679919201 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategorier.cpp
+1680092976 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategorier.cpp
 	"KATEGORIER.H"
 	"LESDATA3.H"
 	<iostream>
@@ -50,7 +51,7 @@
 	"LesData3.h"
 	<iostream>
 
-1679919201 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\lesdata3.cpp
+1680092976 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\lesdata3.cpp
 	<iostream>
 	<iomanip>
 	<cctype>

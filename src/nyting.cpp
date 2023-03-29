@@ -9,12 +9,14 @@
 #include "kunder.h"
 #include <iostream>
 
+using namespace std;
+
+extern Kunder     gKundebase;
+
 
 NyTing::NyTing(int tingNr){
 	nr = tingNr;
-	std::cout << "Tilgjengelige selgere:\n";
-	Kunder::skrivAlleKunder();	
-	std::cout << "Oppgi selgerNr: ";
-	std::cin << 
-}
-
+	cout << "Tilgjengelige selgere:\n";
+	gKundebase.skrivAlleKunder();
+	cout << "Oppgi selgerNr: ";
+};
