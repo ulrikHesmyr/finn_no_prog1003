@@ -15,10 +15,11 @@ class NyTing{
         int nr,
             selgerNr,
             pris,
-            antallTilSalgs; 
+            antallTilSalgs;
         std::string navn,
             beskrivelse;
     public:
+        endreTing();
         NyTing();
         ~NyTing();
 };

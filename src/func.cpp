@@ -20,27 +20,14 @@ void skrivMeny() {
 }
 
 
-void endreTing()    {
-
-    /**
-    *   Kategori* finnKategori(string k);
-    *       - finner ut om innlest kategori er entydig og gyldig
-    *       - if(true), return k
-    *       - else, return melding om at den ikke er entydig/gyldig
-    */
-
-    /**
-    *   if(!entydigKategori.empty())  {     //!k.empty() ?
-    *       for(int i = 0; i < k.size(); i++)
-    *           cout
-    *   }
-    */
-
-}
 
 
+
+
+/**
 void nyTing()   {
 
 
 
 }
+*/

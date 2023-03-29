@@ -2,7 +2,6 @@
 #define __FUNC_H
 
 void skrivMeny();
-void endreTing();
-void nyTing();
+//void nyTing();
 
 #endif
