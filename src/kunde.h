@@ -26,8 +26,10 @@ class Kunde{
             mailadresse;
             
     public:
-        Kunde();
+        Kunde(int kNr); 
         ~Kunde();
+        void lesData();
+        void skrivData();
 };
 
 #endif
