@@ -5,7 +5,7 @@
  *   @author   Mathilde, Oliver og Ulrik, NTNU
  */
 
-#include "KUNDE.H"
+#include "kunde.h"
 #include "LesData3.h"
 #include <iostream>
 

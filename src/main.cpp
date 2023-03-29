@@ -6,11 +6,11 @@
  *   @author   Frode Haug, NTNU
  */
 
-#include "KUNDER.H"
-#include "KATEGORIER.H"
-#include "CONST.H"
-#include "FUNC.H"
-#include "LESDATA3.H"
+#include "kunder.h"
+#include "kategorier.h"
+#include "const.h"
+#include "func.h"
+#include "LesData3.h"
 #include <iostream>
 
 

@@ -5,8 +5,8 @@
  * @author Mathilde, Oliver og Ulrik
 */
 
-#include "KATEGORIER.H"
-#include "LESDATA3.H"
+#include "kategorier.h"
+#include "LesData3.h"
 #include <iostream>
 
 
