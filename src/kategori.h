@@ -20,7 +20,7 @@ class Kategori{
     public:
 		Kategori();
 		~Kategori();
-		void opprettNy
+		void opprettNy();
 		
 
 };
