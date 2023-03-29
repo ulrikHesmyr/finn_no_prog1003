@@ -5,13 +5,13 @@
  * @author Mathilde, Oliver og Ulrik
 */
 
-#include "KUNDER.H"
-#include "KUNDE.H"
-#include "LESDATA3.H"
+#include "kunder.h"
+#include "kunde.h"
+#include "LesData3.H"
 #include <iostream>
-//#include <iterator>
+#include <fstream>
 
-
+using namespace std;
 /**
  * 
 */
@@ -32,7 +32,20 @@ Kunder::~Kunder(){
  * 
 */
 void Kunder::lesFraFil(){
-    std::cout << "hihi";
+    ifstream innFil;
+    innFil.open("KUNDER.DTA");
+
+    if(innFil){
+        cout << "Leser fra KUNDER.DTA" << endl;
+        innFil >> sisteNr; 
+        while(!innFil.eof()){
+            Kunde* nykunde = new Kunde(sisteNr);
+            nykunde->lesFraFil(innFil);
+            kundene.push_back(nykunde);
+            innFil >> sisteNr;
+        }
+        innFil.close();
+    }
 }
 
 
@@ -71,7 +84,7 @@ void Kunder::handling(){
  * Skriver menyen for handlinger som er tilgjengelig i kundebasen
 */
 void Kunder::skrivMeny(){
-    std::cout << "\nVelg handling:\n"
+    cout << "\nVelg handling:\n"
         << "N - Ny kunde\n"
         << "A - Skriv alle kunder\n"
         << "S - Skriv en gitt kunde\n"
@@ -105,8 +118,8 @@ void Kunder::nyKunde(){
  * 
 */
 void Kunder::skrivAlleKunder() const {
-    std::cout   << "\nSiste kundenummer: " << sisteNr  << std::endl
-                << "Antall kunder: " << kundene.size() << std::endl;
+    cout   << "\nSiste kundenummer: " << sisteNr  << endl
+                << "Antall kunder: " << kundene.size() << endl;
 
 
     char skrivFlereKunder;

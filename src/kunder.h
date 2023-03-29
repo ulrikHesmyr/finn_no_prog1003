@@ -1,7 +1,7 @@
 #ifndef __KUNDER_H
 #define __KUNDER_H
 
-#include "KUNDE.H"
+#include "kunde.h"
 #include <list>
 
 class Kunder{

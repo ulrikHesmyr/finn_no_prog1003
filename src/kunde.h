@@ -10,6 +10,7 @@
 
 
 #include <string>
+#include <fstream>
 
 
 class Kunde{
@@ -28,6 +29,7 @@ class Kunde{
     public:
         Kunde(int kNr); 
         ~Kunde();
+        void lesFraFil(std::ifstream & inn);
         void lesData();
         void skrivData();
 };
