@@ -1,1 +1,8 @@
 .vscode
+
+./src/ProgramKjoring.cbp
+./src/ProgramKjoring.depend
+./src/ProgramKjoring
+./src/doxygen
+./src/obj
+./src/bin
