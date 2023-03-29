@@ -37,12 +37,16 @@ void Kunder::lesFraFil(){
 
     if(innFil){
         cout << "Leser fra KUNDER.DTA" << endl;
-        innFil >> sisteNr; 
+        int kundeNr;
+        innFil >> kundeNr; innFil.ignore(1);
+        sisteNr = kundeNr;
+            cout << "kunde nummer !!!!" << kundeNr << endl;
         while(!innFil.eof()){
-            Kunde* nykunde = new Kunde(sisteNr);
+            Kunde* nykunde = new Kunde(kundeNr);
             nykunde->lesFraFil(innFil);
             kundene.push_back(nykunde);
-            innFil >> sisteNr;
+            innFil >> kundeNr; innFil.ignore(1);
+            sisteNr = kundeNr;
         }
         innFil.close();
     }
@@ -78,6 +82,7 @@ void Kunder::handling(){
         }
         valgHandlingKunde = lesChar("\nKommando");
     }
+    cout << "\n\tDu er n\x8F i hovedmenyen\n";
 }
 
 /**
@@ -88,7 +93,8 @@ void Kunder::skrivMeny(){
         << "N - Ny kunde\n"
         << "A - Skriv alle kunder\n"
         << "S - Skriv en gitt kunde\n"
-        << "F - Fjern en gitt kunde\n";
+        << "F - Fjern en gitt kunde\n"
+        << "Q - G\x8F til hovedmeny\n";
 }
 
 /**
@@ -125,6 +131,7 @@ void Kunder::skrivAlleKunder() const {
     char skrivFlereKunder;
     int counter = 0;
 
+    cout << "Nr  " << "Navn  " << "Tlf.  " << endl;
     for(auto & k: kundene){
         k->skrivData();
         counter++;

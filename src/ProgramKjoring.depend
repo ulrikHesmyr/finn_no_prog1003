@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1679919201 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\main.cpp
-	"KUNDER.H"
-	"KATEGORIER.H"
-	"CONST.H"
-	"FUNC.H"
-	"LESDATA3.H"
+1680099327 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\main.cpp
+	"kunder.h"
+	"kategorier.h"
+	"const.h"
+	"func.h"
+	"LesData3.h"
 	<iostream>
 
 1680099327 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.h
@@ -28,7 +28,7 @@
 1680099322 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\nyting.h
 	<string>
 
-1679919201 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\const.h
+1680092976 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\const.h
 
 1680092976 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\func.h
 
@@ -46,10 +46,12 @@
 	"LESDATA3.H"
 	<iostream>
 
-1679935646 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.cpp
-	"KUNDE.H"
+1680102607 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.cpp
+	"kunde.h"
 	"LesData3.h"
 	<iostream>
+	<fstream>
+	<string>
 
 1680092976 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\lesdata3.cpp
 	<iostream>
@@ -58,5 +60,15 @@
 	<cstdlib>
 	"LESDATA3.H"
 
-1679919201 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\nyting.cpp
+1680100045 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\nyting.cpp
+	"nyting.h"
+	"kunder.h"
+	<iostream>
+
+1680102512 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.cpp
+	"kunder.h"
+	"kunde.h"
+	"LesData3.H"
+	<iostream>
+	<fstream>
 

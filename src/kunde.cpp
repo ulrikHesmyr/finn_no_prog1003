@@ -9,12 +9,15 @@
 #include "LesData3.h"
 #include <iostream>
 #include <fstream>
+#include <string>
 
 using namespace std;
 
 
-Kunde::Kunde(int Knr){
-    kundeNr = Knr;
+Kunde::Kunde(int kNr){
+    cout << kNr << endl;
+    kundeNr = kNr;
+    cout << kundeNr << endl;
     cout << "\n\tOpprettet ny kunde med kundenummer: " << kundeNr << endl;
     antallTilSalgs = antallTingKjopt = antallTingSolgt = 0;
 }
@@ -24,15 +27,30 @@ Kunde::~Kunde(){
 }
 
 void Kunde::lesFraFil(ifstream & inn){
-    inn >> antallTilSalgs; 
-    inn >> antallTingKjopt; 
-    inn >> antallTingSolgt; 
-    inn >> mobilnummer; 
-    inn >> postnummer;
-    getline(inn, navn);
-    getline(inn, gateadresse);
-    getline(inn, poststed);
-    getline(inn, mailadresse);
+    int antSalgs, antKjopt, antSolgt, mobilNr, postNr;
+    string nvn, gateAddr, postStd, epostAddr;
+
+    inn >> antSalgs; inn.ignore(1);
+    inn >> antKjopt; inn.ignore(1);
+    inn >> antSolgt; inn.ignore(1);
+    inn >> mobilNr; inn.ignore(1);
+    inn >> postNr; inn.ignore();
+
+    getline(inn, nvn);
+    getline(inn, gateAddr);
+    getline(inn, postStd);
+    getline(inn, epostAddr);
+
+    antallTilSalgs = antSalgs;
+    antallTingKjopt = antKjopt;
+    antallTingSolgt = antSolgt;
+    mobilnummer = mobilNr;
+    postnummer = postNr;
+
+    navn = nvn;
+    gateadresse = gateAddr;
+    poststed = postStd;
+    mailadresse = epostAddr;
 }
 
 void Kunde::lesData(){ 
@@ -48,5 +66,5 @@ void Kunde::lesData(){
 }
 
 void Kunde::skrivData(){
-    cout << "hihi" << endl;
+    cout << kundeNr << navn << mobilnummer << antallTilSalgs << antallTingKjopt << antallTingSolgt << endl; 
 }
