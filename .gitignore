@@ -2,6 +2,21 @@
 
 ./src/ProgramKjoring.cbp
 ./src/ProgramKjoring.depend
+./src/ProgramKjoring.layout
+./src/kunde.h.gch
+./src/kunder.h.gch
+./src/kategori.h.gch
+./src/kategorier.h.gch
+./src/bruktting.h.gch
+./src/const.h.gch
+./src/enum.h.gch
+./src/func.h.gch
+./src/LesData3.h.gch
+./src/nyting.h.gch
+func.o
+LesData3.o
+main.o
+
 ./src/ProgramKjoring
 ./src/doxygen
 ./src/obj
