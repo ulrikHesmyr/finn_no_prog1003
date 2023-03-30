@@ -7,7 +7,8 @@
 
 #include "KATEGORIER.H"
 #include "LESDATA3.H"
-#include <iostream>
+#include <iostream>     // cout
+#include <fstream>      // ifstream, ofstream
 
 
 /**
@@ -31,6 +32,12 @@ Kategorier::~Kategorier(){
  *
 */
 void Kategorier::lesFraFil(){
+
+    ifstream innfil("KATEGORIER.DTA");  // Definerer og åpner ønsket fil
+
+    if (innfil) {                       // Filen er funnet og kan åpnes
+        innfil >>
+    }
 
 }
 
