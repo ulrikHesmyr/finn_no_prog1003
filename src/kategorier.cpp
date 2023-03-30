@@ -9,6 +9,7 @@
 #include "LESDATA3.H"
 #include <iostream>     // cout
 #include <fstream>      // ifstream, ofstream
+using namespace std;
 
 
 /**
@@ -35,7 +36,11 @@ void Kategorier::lesFraFil(){
 
     ifstream innfil("KATEGORIER.DTA");  // Definerer og åpner ønsket fil
 
+    int ant;
+
     if (innfil) {                       // Filen er funnet og kan åpnes
+
+        cout << "\n\tLeser fra filen 'KATEGORIER.DTA' .....\n";
         innfil >>
     }
 
