@@ -28,10 +28,12 @@ class Kunde{
             
     public:
         Kunde(int kNr); 
-        ~Kunde();
         void lesFraFil(std::ifstream & inn);
+        void skrivTilFil(std::ofstream & ut);
         void lesData();
         void skrivData();
+        bool finnKunde(int kNr);
+        void skrivAllData();
 };
 
 #endif

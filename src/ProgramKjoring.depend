@@ -7,11 +7,11 @@
 	"LesData3.h"
 	<iostream>
 
-1680099327 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.h
+1680216745 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.h
 	"kunde.h"
 	<list>
 
-1680099327 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.h
+1680214621 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.h
 	<string>
 	<fstream>
 
@@ -46,12 +46,13 @@
 	"LESDATA3.H"
 	<iostream>
 
-1680102607 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.cpp
+1680218082 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.cpp
 	"kunde.h"
 	"LesData3.h"
 	<iostream>
 	<fstream>
 	<string>
+	<iomanip>
 
 1680092976 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\lesdata3.cpp
 	<iostream>
@@ -60,12 +61,12 @@
 	<cstdlib>
 	"LESDATA3.H"
 
-1680100045 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\nyting.cpp
+1680102694 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\nyting.cpp
 	"nyting.h"
 	"kunder.h"
 	<iostream>
 
-1680102512 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.cpp
+1680218332 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.cpp
 	"kunder.h"
 	"kunde.h"
 	"LesData3.H"

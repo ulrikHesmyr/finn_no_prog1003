@@ -10,10 +10,9 @@ class Kunder{
         std::list <Kunde*> kundene;
     public:
         Kunder();
-        ~Kunder();
         void lesFraFil();
         void handling();
-        void skrivTilFil() const;
+        void skrivTilFil();
         void skrivMeny();
         void nyKunde();
         void skrivAlleKunder() const;
