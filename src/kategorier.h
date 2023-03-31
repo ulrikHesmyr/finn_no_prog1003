@@ -1,29 +1,29 @@
 /**
- *   Header fil for Kategorier classen
+ *   Header fil for klassen NyTing
  *
- *   @file     kategorier.h
- *   @author   Mathilde, Oliver og Ulrik, NTNU
+ *   @file    nyting.h
+ *   @author  Mathilde, Oliver og Ulrik, NTNU
  */
 
-#ifndef __KATEGORIER_H
-#define __KATEGORIER_H
+#ifndef __NYTING_H
+#define __NYTING_H
 
-#include "kategori.h"
-#include <iostream>
-#include <map>
 #include <string>
 
-class Kategorier{
+class NyTing{
     private:
-        int sisteNr;
-        std::map <std::string, Kategori*> kategoriene; //Map med alle unikt navnede Kategori'er
+        int nr,
+            selgerNr,
+            pris,
+            antallTilSalgs;
+        std::string navn,
+            beskrivelse;
     public:
-        Kategorier();
-        ~Kategorier();
-        void lesFraFil();
-        void handling(char valg);
-        void skrivTilFil() const;
-		Kategori* finnKategori(std::string k);
+        endreTing();
+        NyTing();
+        NyTing(int tingNr);
+        ~NyTing();
 };
 
 #endif
+
