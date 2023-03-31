@@ -1,0 +1,75 @@
+# depslib dependency file v1.0
+1680099327 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\main.cpp
+	"kunder.h"
+	"kategorier.h"
+	"const.h"
+	"func.h"
+	"LesData3.h"
+	<iostream>
+
+1680216745 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.h
+	"kunde.h"
+	<list>
+
+1680214621 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.h
+	<string>
+	<fstream>
+
+1680099322 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategorier.h
+	"kategori.h"
+	<iostream>
+	<map>
+	<string>
+
+1680099327 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategori.h
+	"NYTING.H"
+	<list>
+
+1680099322 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\nyting.h
+	<string>
+
+1680092976 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\const.h
+
+1680092976 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\func.h
+
+1680092976 c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\lesdata3.h
+
+1680092991 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\func.cpp
+	"FUNC.H"
+	"KUNDER.H"
+	<iostream>
+
+1680092976 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategori.cpp
+
+1680092976 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kategorier.cpp
+	"KATEGORIER.H"
+	"LESDATA3.H"
+	<iostream>
+
+1680218082 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunde.cpp
+	"kunde.h"
+	"LesData3.h"
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+
+1680092976 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\lesdata3.cpp
+	<iostream>
+	<iomanip>
+	<cctype>
+	<cstdlib>
+	"LESDATA3.H"
+
+1680102694 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\nyting.cpp
+	"nyting.h"
+	"kunder.h"
+	<iostream>
+
+1680218332 source:c:\users\ulrik\onedrive - ntnu\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\kunder.cpp
+	"kunder.h"
+	"kunde.h"
+	"LesData3.H"
+	<iostream>
+	<fstream>
+

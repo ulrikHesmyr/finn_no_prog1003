@@ -18,7 +18,10 @@ class Kategori{
                                 //NyTing og BruktTing
         
     public:
-
+		Kategori();
+		~Kategori();
+		void opprettNy();
+		
 
 };
 

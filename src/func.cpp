@@ -6,9 +6,12 @@
 */
 
 #include "FUNC.H"
+#include "KUNDER.H"
 #include <iostream>
 using namespace std;
 
+
+extern Kunder gKundebase;
 
 void skrivMeny() {
 

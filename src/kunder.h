@@ -1,7 +1,7 @@
 #ifndef __KUNDER_H
 #define __KUNDER_H
 
-#include "KUNDE.H"
+#include "kunde.h"
 #include <list>
 
 class Kunder{
@@ -10,10 +10,9 @@ class Kunder{
         std::list <Kunde*> kundene;
     public:
         Kunder();
-        ~Kunder();
         void lesFraFil();
         void handling();
-        void skrivTilFil() const;
+        void skrivTilFil();
         void skrivMeny();
         void nyKunde();
         void skrivAlleKunder() const;

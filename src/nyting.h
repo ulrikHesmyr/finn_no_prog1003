@@ -19,9 +19,9 @@ class NyTing{
         std::string navn,
             beskrivelse;
     public:
-        endreTing();
-        NyTing();
+        NyTing(int tingNr);
         ~NyTing();
 };
 
 #endif
+
