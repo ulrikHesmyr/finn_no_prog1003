@@ -7,7 +7,7 @@
 
 #include "kunder.h"
 #include "kunde.h"
-#include "LesData3.H"
+#include "LesData3.h"
 #include <iostream>
 #include <fstream>
 
