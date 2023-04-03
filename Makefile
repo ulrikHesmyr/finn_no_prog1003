@@ -1,35 +1,50 @@
-output: main.o func.o LesData3.o
-	g++ main.o func.o LesData3.o -o output
+# Compiler binaries and options
+CC=g++
+RM=rm -f
+RMDIR=rm -rf
+CPPFLAGS=-g -Wall -std=c++11
+LDFLAGS=-g
 
-main.o: src/main.cpp
-	g++ -c src/main.cpp
+# Source files
+SRCS=$(wildcard src/*.cpp)
+OBJS=$(subst src/.cpp,.o,$(SRCS))
 
-func.o: src/func.cpp src/func.h
-	g++ -c src/func.cpp
+# Compiled binary filename
+BINOUT=prosjekt
+DATADIR=data
 
-LesData3.o: src/LesData3.cpp src/LesData3.h
-	g++ -c src/LesData3.cpp
+# Main compilation target
+all: prosjekt
 
-brukttring.o: src/bruktting.cpp src/bruktting.h
-	g++ -c src/bruktting.cpp
+prosjekt: $(OBJS)
+	$(CC) $(LDFLAGS) -o $(BINOUT) $(OBJS)
 
-const.o: src/const.h
-	g++ -c src/const.cpp
+# Compiled project dependencies
+depend: .depend
 
-enum.o: src/enum.h
-	g++ -c src/enum.h
+.depend: $(SRCS)
+	$(RM) ./.depend
+	$(CC) $(CPPFLAGS) -MM $^>>./.depend;
 
-kategori.o: src/kategorier.cpp src/kategorier.h
-	g++ -c src/kategorier.cpp
-
-kategori.o: src/kategori.cpp src/kategori.h
-	g++ -c src/kategori.cpp
-
-kunde.o: src/kunde.cpp src/kunde.h
-	g++ -c src/kunde.cpp
-
-nyting.o: src/nyting.cpp src/nyting.h
-	g++ -c src/nyting.cpp
-
+# Remove all object files
 clean:
-	rm *.o output
+	$(RM) $(OBJS)
+
+# Remove all object and temporary files
+distclean: clean
+	$(RM) *~ .depend
+
+# Remove all data files
+rmdata:
+	$(RMDIR) data
+
+# Remove everything
+cleanall: distclean rmdata
+
+# Run binary, create required data directory if missing
+run:
+	if [ ! -d "$(DATADIR)" ]; then mkdir "$(DATADIR)"; fi
+	./$(BINOUT)
+
+# Dynamically generated dependency file
+include .depend

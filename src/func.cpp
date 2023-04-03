@@ -5,8 +5,8 @@
  * @author Mathilde, Oliver og Ulrik, NTNU
 */
 
-#include "FUNC.H"
-#include "KUNDER.H"
+#include "func.h"
+#include "kunder.h"
 #include <iostream>
 using namespace std;
 
