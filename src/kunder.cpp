@@ -216,3 +216,11 @@ void Kunder::fjernKunde() {
         cout << "\n\tFant ingen kunde med dette nummeret.\n";
     }
 }
+
+
+/**
+ * Returnerer antall kunder i Kunder.kundene
+*/
+int Kunder::antall() {
+    return kundene.size();
+}
