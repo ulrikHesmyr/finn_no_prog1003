@@ -7,16 +7,23 @@
 
 #include "nyting.h"
 #include "kunder.h"
+#include "list"
+#include "LesData3.h"
 #include <iostream>
 
 using namespace std;
 
-extern Kunder     gKundebase;
+extern Kunder gKundebase;
 
+/**
+ * Legger til ny ting i ???
+*/
 
 NyTing::NyTing(int tingNr){
 	nr = tingNr;
 	cout << "Tilgjengelige selgere:\n";
 	gKundebase.skrivAlleKunder();
-	cout << "Oppgi selgerNr: ";
-};
+	lesInt("Oppgi selgerNr", 0, gKundebase.antall());
+
+	
+}

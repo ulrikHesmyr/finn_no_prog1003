@@ -18,6 +18,7 @@ class Kunder{
         void skrivAlleKunder() const;
         void skrivKunde() const; 
         void fjernKunde();
+        int antall();
 
 };
 
