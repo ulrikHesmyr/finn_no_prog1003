@@ -18,10 +18,12 @@ class Kategori{
                                 //NyTing og BruktTing
         
     public:
-		Kategori();
-		~Kategori();
-		void opprettNy();
-    void finnKategori(string k);
+		  Kategori();
+		  ~Kategori();
+		  void opprettNy();
+      void finnKategori(string k);
+      void lesFraFil(std::ifstream & inn);
+      void skrivTilFil(std::ofstream & ut);
 		
 
 };

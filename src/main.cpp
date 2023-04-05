@@ -28,8 +28,8 @@ Kategorier gKategoribase; ///<  Globalt container-objekt med ALLE kategoriene.
  *  Hovedprogram.
  */
 int main()  {
-  char valg;
 
+  char valg;
   gKundebase.lesFraFil();
   gKategoribase.lesFraFil();
 
