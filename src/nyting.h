@@ -20,7 +20,8 @@ class NyTing{
             beskrivelse;
     public:
         NyTing(int tingNr);
-        ~NyTing();
+        void endreTing();
+
 };
 
 #endif

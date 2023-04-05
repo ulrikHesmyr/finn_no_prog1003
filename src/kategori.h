@@ -21,6 +21,7 @@ class Kategori{
 		Kategori();
 		~Kategori();
 		void opprettNy();
+    void finnKategori(string k);
 		
 
 };
