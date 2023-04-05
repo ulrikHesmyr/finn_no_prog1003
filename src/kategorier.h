@@ -30,6 +30,7 @@ class Kategorier{
         void skrivKategori();
         void skrivAlleKategorier();
         void nyKategori();
+        bool finnKategori(std::string k);
         
         
 };

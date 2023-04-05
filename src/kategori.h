@@ -20,8 +20,8 @@ class Kategori{
     public:
 		  Kategori();
 		  ~Kategori();
-		  void opprettNy();
-      void finnKategori(string k);
+      int antallTilSalgs();
+      void skrivData() const;
       void lesFraFil(std::ifstream & inn);
       void skrivTilFil(std::ofstream & ut);
 		

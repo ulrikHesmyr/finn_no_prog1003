@@ -16,16 +16,32 @@ using namespace std;
 extern Kunder gKundebase;
 
 /**
- * Legger til ny ting i ???
+ * Constructor for klassen NyTing uten parameter som brukes ved opprettelse av ting
+ * når data leses fra fil.
 */
+NyTing::NyTing(){
 
+}
+
+/**
+ * Constructor for opprettelse av et objekt av klassen NyTing
+*/
 NyTing::NyTing(int tingNr){
 	nr = tingNr;
+};
+
+/**
+ * Leser data for objektet av klassen NyTing etter opprettelsen
+ * 
+ * @see Kunder::skrivAlleKunder()
+ * @see Kunder::antall()
+ * @see lesInt()
+*/
+void NyTing::lesData(){
 	cout << "Tilgjengelige selgere:\n";
 	gKundebase.skrivAlleKunder();
-<<<<<<< HEAD
-	cout << "Oppgi selgerNr: ";
-};
+	selgerNr = lesInt("\nOppgi selgerNr: ", 1, gKundebase.antall());
+}
 
 
 /**
@@ -64,9 +80,39 @@ void NyTing::endreTing()    {
     *
     }*/
 
-=======
-	lesInt("Oppgi selgerNr", 0, gKundebase.antall());
+/**
+ * Skriver data om et objekt av klassen NyTing
+*/
+void NyTing::skrivData() const{
+    cout << "Produkt nummer: " << nr << endl
+        << "\tNavn: " << navn << endl
+        << "\tSelgers nummer: " << selgerNr << endl
+        << "\tPris: " << pris << endl
+        << "\tAntall til salgs: " << antallTilSalgs << endl
+        << "\tBeskrivelse: " << beskrivelse << endl;
+};
 
-	
+/**
+ * Leser data fra fil
+*/
+void NyTing::lesFraFil(ifstream & inn){
+    int tingNr, selgerensNr, antallAvTingen, prisen;
+    string navnet, beskrivelsen;
+
+    inn >> tingNr; inn.ignore(1);
+    inn >> selgerensNr; inn.ignore(1);
+    inn >> antallAvTingen; inn.ignore(1);
+    inn >> prisen; inn.ignore();
+
+    getline(inn, navnet);
+    getline(inn, beskrivelsen);
+
+    navn = navnet;
+    beskrivelse = beskrivelsen;
+
+    nr = tingNr;
+    selgerNr = selgerensNr;
+    pris = prisen;
+    antallTilSalgs = antallAvTingen;
+
 }
->>>>>>> c39ac13 (la til int funksjon Kunder::antall)

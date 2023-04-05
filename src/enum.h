@@ -2,7 +2,7 @@
 #define __ENUM_H
 
 
-enum Kvalitet	{
+enum Kvalitet {
 	SomNy,
 	PentBrukt,
 	Brukt,

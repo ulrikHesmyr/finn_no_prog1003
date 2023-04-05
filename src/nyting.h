@@ -9,6 +9,7 @@
 #define __NYTING_H
 
 #include <string>
+#include <fstream>
 
 class NyTing{
     private:
@@ -19,8 +20,12 @@ class NyTing{
         std::string navn,
             beskrivelse;
     public:
+        NyTing();
         NyTing(int tingNr);
         void endreTing();
+        void lesFraFil(std::ifstream & inn);
+        virtual void lesData();
+        virtual void skrivData() const;
 
 };
 
