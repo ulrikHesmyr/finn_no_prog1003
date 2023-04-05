@@ -5,25 +5,33 @@
  *   @author  Mathilde, Oliver og Ulrik, NTNU
  */
 
-#ifndef __NYTING_H
-#define __NYTING_H
+#ifndef __KATEGORIER_H
+#define __KATEGORIER_H
 
+#include "kategori.h"
 #include <string>
+#include <map>
+#include <fstream>
 
-class NyTing{
+
+class Kategorier{
     private:
-        int nr,
-            selgerNr,
-            pris,
-            antallTilSalgs;
-        std::string navn,
-            beskrivelse;
+        int sisteNr;
+        std::map <std::string, Kategori*> kategoriene; 
     public:
-        endreTing();
-        NyTing();
-        NyTing(int tingNr);
-        ~NyTing();
+        Kategorier();
+        void handling(char valg);
+        void lesFraFil();
+        void skrivTilFil();
+        void skrivMeny(char valg);
+        void kjopTing();
+        void endreTing();
+        void nyTing();
+        void skrivKategori();
+        void skrivAlleKategorier();
+        void nyKategori();
+        
+        
 };
 
 #endif
-
