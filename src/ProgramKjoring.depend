@@ -78,3 +78,94 @@
 	<iostream>
 	<fstream>
 
+1680696650 source:c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\func.cpp
+	"func.h"
+	"kunder.h"
+	<iostream>
+
+1680257184 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\func.h
+
+1680696650 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\kunder.h
+	"kunde.h"
+	<list>
+
+1680257184 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\kunde.h
+	<string>
+	<fstream>
+
+1680789080 source:c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\kategori.cpp
+	<string>
+	<iostream>
+	<fstream>
+	"kategori.h"
+	"nyting.h"
+	"bruktting.h"
+
+1680789080 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\kategori.h
+	"nyting.h"
+	<list>
+
+1680789080 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\nyting.h
+	<string>
+	<fstream>
+
+1680789080 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\bruktting.h
+	"nyting.h"
+	"enum.h"
+
+1680789080 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\enum.h
+
+1680789080 source:c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\kategorier.cpp
+	"kategorier.h"
+	"kategori.h"
+	"LesData3.h"
+	<iostream>
+	<vector>
+
+1680789080 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\kategorier.h
+	"kategori.h"
+	<string>
+	<map>
+	<fstream>
+
+1680257183 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\lesdata3.h
+
+1680257184 source:c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\kunde.cpp
+	"kunde.h"
+	"LesData3.h"
+	<iostream>
+	<fstream>
+	<string>
+	<iomanip>
+
+1680696650 source:c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\kunder.cpp
+	"kunder.h"
+	"kunde.h"
+	"LesData3.h"
+	<iostream>
+	<fstream>
+
+1680696650 source:c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\lesdata3.cpp
+	<iostream>
+	<iomanip>
+	<cctype>
+	<cstdlib>
+	"LesData3.h"
+
+1680696650 source:c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\main.cpp
+	"kunder.h"
+	"kategorier.h"
+	"const.h"
+	"func.h"
+	"LesData3.h"
+	<iostream>
+
+1680257184 c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\const.h
+
+1680789080 source:c:\users\egela\documents\skolegreier\prog\ooprog\prosjekt v23\gruppe30-prog1003-prosjekt\src\nyting.cpp
+	"nyting.h"
+	"kunder.h"
+	"list"
+	"LesData3.h"
+	<iostream>
+
