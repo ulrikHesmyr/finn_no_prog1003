@@ -1,6 +1,6 @@
 .vscode
 
-C:\Users\ulrik\OneDrive - NTNU\koding\c++\obliger\oblig4\gruppe30-prog1003-prosjekt\src\ProgramKjoring.cbp
+./src/ProgramKjoring.cbp
 ./src/ProgramKjoring.depend
 ./src/ProgramKjoring.layout
 ./src/kunde.h.gch
