@@ -1,6 +1,6 @@
 .vscode
 
-./src/ProgramKjoring.cbp
+src/ProgramKjoring.cbp
 ./src/ProgramKjoring.depend
 ./src/ProgramKjoring.layout
 ./src/kunde.h.gch
