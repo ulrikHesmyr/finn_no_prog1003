@@ -23,7 +23,7 @@ class Kategori{
       int antallTilSalgs();
       void skrivData() const;
       void lesFraFil(std::ifstream & inn);
-      void skrivTilFil(std::ofstream & ut);
+      void skrivTilFil(std::ofstream & ut, std::string k);
 		
 
 };

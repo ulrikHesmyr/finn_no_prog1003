@@ -10,15 +10,21 @@
 
 #include "nyting.h"
 #include "enum.h"
+#include <fstream>
 
 class BruktTing : public NyTing{
     private:
         int alder;
-        enum Kvalitet;
+        enum Kvalitet kvaliteten;
     public:
-        BruktTing();
+        BruktTing(std::ifstream & inn);
+        enum Kvalitet hentKvalitet(char k);
+        char hentChar(enum Kvalitet k);
+        virtual void skrivTilFil(std::ofstream & ut);
         virtual void lesData();
-        virtual void skrivData();
+        virtual void skrivData() const;
+        virtual void skrivTilstand() const;
+        virtual int skrivNyEllerBrukt() const;
 };
 
 #endif

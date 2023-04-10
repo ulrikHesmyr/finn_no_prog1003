@@ -23,21 +23,24 @@ Kategori::Kategori(){
 }
 
 /**
+ * Leser inn data fra filen KATEGORIER.DTA
  * 
+ * @param inn - Filstrøm som data leses fra
+ * @see NyTing::lesFraFil(...)
+ * @see NyTing::NyTing()
+ * @see BruktTing::BruktTing()
 */
 void Kategori::lesFraFil(ifstream & inn){
     int nyEllerBrukt;
     inn >> nyEllerBrukt; inn.ignore(1);
     NyTing* nyeTingen;
     if(nyEllerBrukt == 1){
-        nyeTingen = new NyTing();
+        nyeTingen = new NyTing(inn);
     } else {
-        nyeTingen = new BruktTing();
+        nyeTingen = new BruktTing(inn);
     }
-    nyeTingen->lesFraFil(inn);
     nyeTing.push_back(nyeTingen);
     
-
 };
 
 /**
@@ -47,15 +50,25 @@ void Kategori::lesFraFil(ifstream & inn){
 void Kategori::skrivData() const{
     cout << "Antall ting til salgs: " << nyeTing.size() << endl;
     for(auto & val: nyeTing){
+        val->skrivTilstand();
         val->skrivData();
     }
 }
 
 /**
+ * Skriver navnet på kategorien for hver av tingene i en kategori
  * 
+ * @param ut - Filstrømmen som data skrives til
+ * @param k - Navnet på kategorien som skrives til filen
+ * @see NyTing::skrivTilFil(...)
 */
-void Kategori::skrivTilFil(std::ofstream & ut){
-
+void Kategori::skrivTilFil(std::ofstream & ut, string k){
+    
+    for(auto & ting: nyeTing){
+        ut << k << "\n";
+        ut << ting->skrivNyEllerBrukt() << " ";
+        ting->skrivTilFil(ut);
+    }
 };
 
 /**

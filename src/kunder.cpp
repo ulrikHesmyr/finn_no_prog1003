@@ -99,11 +99,11 @@ void Kunder::handling(){
 */
 void Kunder::skrivMeny(){
     cout << "\nVelg handling:\n"
-        << "N - Ny kunde\n"
-        << "A - Skriv alle kunder\n"
-        << "S - Skriv en gitt kunde\n"
-        << "F - Fjern en gitt kunde\n"
-        << "Q - G\x8F til hovedmeny\n";
+        << "\tN - Ny kunde\n"
+        << "\tA - Skriv alle kunder\n"
+        << "\tS - Skriv en gitt kunde\n"
+        << "\tF - Fjern en gitt kunde\n"
+        << "\tQ - G\x8F til hovedmeny\n";
 }
 
 /**

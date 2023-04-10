@@ -20,12 +20,14 @@ class NyTing{
         std::string navn,
             beskrivelse;
     public:
-        NyTing();
+        NyTing(std::ifstream & inn);
         NyTing(int tingNr);
         void endreTing();
-        void lesFraFil(std::ifstream & inn);
+        virtual void skrivTilFil(std::ofstream & ut);
         virtual void lesData();
         virtual void skrivData() const;
+        virtual void skrivTilstand() const;
+        virtual int skrivNyEllerBrukt() const;
 
 };
 

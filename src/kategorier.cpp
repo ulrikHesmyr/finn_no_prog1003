@@ -11,6 +11,7 @@
 #include "LesData3.h"
 #include <iostream>
 #include <vector>
+#include <iomanip>
 
 
 using namespace std;
@@ -60,7 +61,7 @@ void Kategorier::handling(char valg){
               v = lesChar("\nKommando");
             }
 
-            cout << "\nGikk til hovedmenyen...\n";
+            cout << "\n\tDu er n\x8F i hovedmenyen\n";
             break;
         case 'T':
             v = lesChar("\nKommando");
@@ -76,7 +77,7 @@ void Kategorier::handling(char valg){
               }
               v = lesChar("\nKommando");
             }
-            cout << "\nGikk til hovedmenyen...\n";
+            cout << "\n\tDu er n\x8F i hovedmenyen\n";
             break;
         case 'K':
             Kategorier::kjopTing();
@@ -97,13 +98,13 @@ void Kategorier::skrivMeny(char valg){
                 << "\tN - Ny kategori \n"
                 << "\tA - Skriv alle kategorier\n"
                 << "\tS - Skriv en gitt kategori\n"
-                << "\tQ - Avslutt/(Q)uit\n";
+                << "\tQ - G\x8F til hovedmenyen\n";
             break;
         case 'T':
              cout << "\nVelg handling:\n"
                 << "\tN - Ny ting\n"
                 << "\tE - Endre ting\n"
-                << "\tQ - Avslutt/(Q)uit\n";
+                << "\tQ - G\x8F til hovedmenyen\n";
             break;
         default: break;
     }
@@ -134,6 +135,10 @@ void Kategorier::nyKategori(){
 
 /**
  * Leser data fra filen KATEGORIER.DTA
+ * 
+ * @see Kategorier::finnKategori(...)
+ * @see Kategori::Kategori()
+ * @see Kategori::lesFraFil()
 */
 void Kategorier::lesFraFil(){
     ifstream innFil;
@@ -162,7 +167,26 @@ void Kategorier::lesFraFil(){
     }
 }
 
+/**
+ * Skriver alle kategorier og tingene i kategoriene til filen
+ * 
+ * @see Kategori::skrivTilFil(...)
+*/
 void Kategorier::skrivTilFil(){
+
+    ofstream utFil;
+    utFil.open("KATEGORIER.DTA");
+
+    if(utFil){
+        cout << "\n\tSkriver til Filen KATEGORIER.DTA\n";
+
+        //Skriver ut for hver kategori
+        for(auto & kat: kategoriene){
+            kat.second->skrivTilFil(utFil, kat.first);
+        }
+    } else {
+        cout << "\n\tKunne ikke åpne fil\n";
+    }
 
 }
 
@@ -181,6 +205,8 @@ void Kategorier::nyTing(){
 /**
  * Skriver data om en gitt kategori dersom det er funn for en entydig navngitt kategori.
  * 
+ * @see Kategorier::skrivAlleKategorier()
+ * @see Kategori::skrivData()
 */
 void Kategorier::skrivKategori(){
 
@@ -191,15 +217,28 @@ void Kategorier::skrivKategori(){
     char finnKategori = 'J';
     string onsketKategori;
 
+    
+
     //Henter kategori fra bruker og ser etter funn
-    while(!gyldigFunn || finnKategori == 'J'){
+    while(!gyldigFunn && finnKategori == 'J'){
         cout << "\nSkriv inn kategori: "; getline(cin, onsketKategori);
+
+        //Gjør om string fra input til lowercase
+        for(int i = 0; i < onsketKategori.size(); i++){
+            onsketKategori[i] = tolower(onsketKategori[i]);
+        }
         
         vector <string> potensielleKategorier;
 
         //Dersom det er treff for en substring, så legges kategorien i potensielle matcher
         for(auto & val: kategoriene){
-            if(val.first.find(onsketKategori) != 0){
+
+            //Gjør om første bokstaven i kategorien til lowercase
+            string kategoriNavn = val.first;
+            kategoriNavn[0] = tolower(kategoriNavn[0]);
+
+            //Ser om det er en match for en substring fra input stringen
+            if(kategoriNavn.find(onsketKategori) == 0){
                 gyldigFunn = true;
                 finnKategori == 'N';
                 potensielleKategorier.push_back(val.first);
@@ -212,11 +251,11 @@ void Kategorier::skrivKategori(){
             potensielleKategorier.clear();
         } else if(potensielleKategorier.size() == 1) {
             onsketKategori = potensielleKategorier[0];
+            gyldigFunn = true;
         }
 
         if(!gyldigFunn){
             finnKategori = lesChar("\nIngen funn. Prøv på nytt? (J)a/(N)ei");
-
         }
     
     }
@@ -243,7 +282,7 @@ void Kategorier::skrivAlleKategorier(){
 
         //Går igjennom alle kategoriene og skriver ut navn og antall til salgs
         for(auto & kat: kategoriene){
-            cout << "\n" << kat.first;
+            cout << "\n" << kat.first << right << setw(6) << 
             kat.second->antallTilSalgs();
         }
     } else {
