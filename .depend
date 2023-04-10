@@ -1,7 +1,0 @@
-func.o: src/func.cpp src/func.h src/kunder.h src/kunde.h
-kategori.o: src/kategori.cpp
-kategorier.o: src/kategorier.cpp src/nyting.h src/kunder.h src/kunde.h
-kunde.o: src/kunde.cpp src/kunde.h src/LesData3.h
-main.o: src/main.cpp src/kunder.h src/kunde.h src/kategorier.h \
- src/const.h src/func.h src/LesData3.h
-nyting.o: src/nyting.cpp src/nyting.h src/kunder.h src/kunde.h
