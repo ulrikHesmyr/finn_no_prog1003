@@ -10,11 +10,11 @@ Mail: mathileg@stud.ntnu.no
 Mobil: 47653319
 
 
-**Oliver ..**
+**Oliver Tangen**
 
-Mail: 
+Mail: oliveta@stud.ntnu.no
 
-Mobil: 
+Mobil: 900 15 338
 
 
 **Ulrik B H**
