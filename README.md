@@ -6,9 +6,9 @@ Mathilde E
 Mail: mathileg@stud.ntnu.no
 Mobil: 47653319
 
-Oliver ..
-Mail: 
-Mobil: 
+Oliver T
+Mail: oliveta@stud.ntnu.no
+Mobil: 90015338
 
 Ulrik B H
 Mail: ulrikhe@stud.ntnu.no
