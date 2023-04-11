@@ -1,7 +1,7 @@
 /**
  * Fil for alle public funksjoner i klassen Kunder
  * 
- * @file class.cpp
+ * @file kunder.cpp
  * @author Mathilde, Oliver og Ulrik
 */
 
@@ -31,13 +31,17 @@ void Kunder::lesFraFil(){
     innFil.open("KUNDER.DTA");
 
     if(innFil){
-        cout << "Leser fra KUNDER.DTA" << endl;
+        cout << "\tLeser fra filen KUNDER.DTA..." << endl;
         int kundeNr;
         innFil >> kundeNr; innFil.ignore(1);
         sisteNr = kundeNr;
         while(!innFil.eof()){
+
+            //Oppretter nytt objekt av classen Kunde og leser inn data fra filen
             Kunde* nykunde = new Kunde(kundeNr);
             nykunde->lesFraFil(innFil);
+
+            //Legger til objektet i listen for alle kundene
             kundene.push_back(nykunde);
             innFil >> kundeNr; innFil.ignore(1);
             sisteNr = kundeNr;
@@ -57,7 +61,7 @@ void Kunder::skrivTilFil() {
     utFil.open("KUNDER.DTA");
 
     if(utFil){
-        cout << "\n\tSkriver til Filen KUNDER.DTA";
+        cout << "\n\tSkriver til Filen KUNDER.DTA...";
 
         for(auto & k: kundene){
             k->skrivTilFil(utFil);
@@ -74,7 +78,10 @@ void Kunder::skrivTilFil() {
  * Håndterer brukerens kommando-valg for kundebasen
  * 
  * @see Kunder::skrivMeny()
- * 
+ * @see Kunder::nyKunde()
+ * @see Kunder::skrivAlleKunder()
+ * @see Kunder::skrivKunde()
+ * @see Kunder::fjernKunde()
 */
 void Kunder::handling(){
     Kunder::skrivMeny();
@@ -87,7 +94,10 @@ void Kunder::handling(){
             case 'A':  Kunder::skrivAlleKunder();       break;
             case 'S':  Kunder::skrivKunde();            break;
             case 'F':  Kunder::fjernKunde();            break;
-            default:   skrivMeny();                     break;
+            default:   
+                cout << "\n\tKommando ikke tillat!\n"; 
+                Kunder::skrivMeny(); 
+                break;
         }
         valgHandlingKunde = lesChar("\nKommando");
     }
@@ -132,23 +142,23 @@ void Kunder::nyKunde(){
  * ut på skjermen
  * 
  * @see Kunde::skrivData()
- * @see lesChar(...)
 */
 void Kunder::skrivAlleKunder() const {
+
+    char gaaVidere;
+    int counter = 0;
+
     cout   << "\nSiste kundenummer: " << sisteNr  << endl
                 << "Antall kunder: " << kundene.size() << endl;
 
-
-    char skrivFlereKunder;
-    int counter = 0;
-
     cout << "Nr        " << "Navn  " << "Tlf.  " << endl;
+
+    //Stopper loopen for hver 20. kunde og venter på input før den går videre
     for(auto & k: kundene){
         k->skrivData();
         counter++;
         if(counter % 20 == 0){
-            char gaaVidere = ' ';
-            gaaVidere = lesChar("Trykk (Enter) for å lese videre");
+            gaaVidere = lesChar("Skriv inn en bokstav for å lese videre");
         }
     }
 }
@@ -157,7 +167,6 @@ void Kunder::skrivAlleKunder() const {
  * Skriver dataen til en gitt kunde ut ifra kundenummer, dersom kunde
  * med det gitte kundenummeret eksisterer
  * 
- * @see lesInt(...)
  * @see Kunde::finnKunde()
  * @see Kunde::skrivAllData()
 */
@@ -182,7 +191,6 @@ void Kunder::skrivKunde() const {
 /**
  * Fjerner en valgt kunde fra kundene, dersom gitt kunde eksisterer
  * 
- * @see lesInt(...)
  * @see Kunde::finnKunde(...)
  * @see Kunde::skrivAllData()
 */
@@ -223,4 +231,53 @@ void Kunder::fjernKunde() {
 */
 int Kunder::antall() {
     return kundene.size();
+}
+
+/**
+ * Henter en kunde ut ifra kundenummeret til en vilkårlig kunde
+ * 
+ * @see Kunde::finnKunde(...)
+ * @return int - selgerens kundenummer
+*/
+int Kunder::hentKunde(){
+    bool gyldigFunn = false;
+    int brukersNr;
+
+    while(!gyldigFunn){
+        brukersNr = lesInt("\nSelgerens kundenummer: ", 1, kundene.size());
+        
+        for(auto & k: kundene){
+            if(k->finnKunde(brukersNr)){
+                gyldigFunn = true;
+            }
+        }
+    }
+    
+    return brukersNr;
+
+}
+
+/**
+ * Registrerer salgsdata for kunde og selger ved et salg
+ * 
+ * @param kjoperensNummer - Kjøperens unike kundenummer
+ * @param selgerensNummer - Selgerens unike kundenummer
+ * @param antTilSalgs - Antall igjen til salgs
+ * @see Kunde::finnKunde(...)
+ * @see Kunde::kjop()
+ * @see Kunde::minkAntallTilSalgs()
+*/
+void Kunder::salg(int kjoperensNummer, int selgerensNummer, int antTilSalgs){
+    for(auto & k: kundene){
+        if(k->finnKunde(kjoperensNummer)){
+            k->kjop();
+        }
+
+        if(k->finnKunde(selgerensNummer)){
+            k->salg();
+            if(antTilSalgs == 0){
+                k->minkAntallTilSalgs();
+            }
+        }
+    }
 }

@@ -12,7 +12,10 @@
 #include <string>
 #include <fstream>
 
-
+/**
+ * Kunde (med kundens unike nummer, mobilnummer, postnummer, antall ting kjøpt, 
+ * antall ting solgt, antall ting kunden har til salgs, navn og beskrivelse)
+*/
 class Kunde{
     private:
         int kundeNr, 
@@ -34,6 +37,10 @@ class Kunde{
         void skrivData();
         bool finnKunde(int kNr);
         void skrivAllData();
+        void kjop();
+        void salg();
+        void minkAntallTilSalgs();
+        void okAntallTilSalgs();
 };
 
 #endif

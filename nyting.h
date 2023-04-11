@@ -11,6 +11,9 @@
 #include <string>
 #include <fstream>
 
+/**
+ * NyTing (med tingens unike nummer, selgerens unike kundenummer, pris og antall til salgs av tingen)
+*/
 class NyTing{
     private:
         int nr,
@@ -21,13 +24,17 @@ class NyTing{
             beskrivelse;
     public:
         NyTing(std::ifstream & inn);
-        NyTing(int tingNr);
+        NyTing(int tingNr, int selgerensNr);
         void endreTing();
+        void salg(int kjoperensNummer, int selgerensNummer);
         virtual void skrivTilFil(std::ofstream & ut);
         virtual void lesData();
         virtual void skrivData() const;
         virtual void skrivTilstand() const;
         virtual int skrivNyEllerBrukt() const;
+        int hentNr();
+        int hentSelgerNr();
+        int hentAntallAvTing();
 
 };
 

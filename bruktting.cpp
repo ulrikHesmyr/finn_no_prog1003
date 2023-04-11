@@ -7,7 +7,9 @@
 
 #include "bruktting.h"
 #include "nyting.h"
-#include "func.h"
+#include "const.h"
+
+#include "LesData3.h"
 #include <fstream>
 #include <string>
 #include <vector>
@@ -34,10 +36,36 @@ BruktTing::BruktTing(ifstream & inn) : NyTing(inn) {
 }
 
 
+/**
+ * Constructor for opprettelse av et objekt av klassen BruktTing
+ * 
+ * @see NyTing::NyTing(...)
+*/
+BruktTing::BruktTing(int tingNr, int selgerensNr) : NyTing(tingNr, selgerensNr){
+	
+};
+
+/**
+ * Leser inn ekstra data for subklassen BruktTing
+ * 
+ * @see NyTing::lesData()
+ * @see BruktTing::hentKvalitet(...)
+*/
 void BruktTing::lesData(){
+
+    char kvalitet;
+
+    //Leser inn data for baseklassen
     NyTing::lesData();
 
     //Les inn int alder og enum Kvalitet
+    alder = lesInt("\nAlder p\x8F gjenstand (\x8fr)", 0, MAKSALDERTING);
+
+    //Henter gyldig input fra bruker
+    while(kvalitet != 'S' && kvalitet != 'P' && kvalitet != 'B' && kvalitet != 'G' && kvalitet != 'L'){
+        kvalitet = lesChar("Kvalitet p\x8F gjenstand- (S)om ny, (P)ent brukt, (B)rukt, (G)odt brukt, s(L)iten");
+    }
+    kvaliteten = BruktTing::hentKvalitet(kvalitet);
 }
 
 /**
@@ -47,6 +75,7 @@ void BruktTing::lesData(){
 */
 void BruktTing::skrivData() const{
 
+    //Skriver all data for baseklassen før de resterende dataene
     NyTing::skrivData();
     
     cout << "\tAlder: " << alder
@@ -90,6 +119,12 @@ enum Kvalitet BruktTing::hentKvalitet(char k){
 	}
 }
 
+/**
+ * Henter en char ut ifra en gitt kvalitet i form av enum Kvalitet
+ * 
+ * @param k - kvaliteten som skal omgjøres til en char
+ * @return char - char som representerer kvaliteten til en brukt ting
+*/
 char BruktTing::hentChar(enum Kvalitet k){
     switch(k){
         case SomNy:
@@ -128,6 +163,8 @@ void BruktTing::skrivTilFil(ofstream & ut){
 
 /**
  * Skriver tallet 0 til fil fordi gjenstanden er brukt
+ * 
+ * @return int - tallet 0 som representerer at gjenstanden er brukt for filposten
 */
 int BruktTing::skrivNyEllerBrukt() const {
     return 0;

@@ -25,7 +25,15 @@ Kategorier gKategoribase; ///<  Globalt container-objekt med ALLE kategoriene.
 
 
 /**
- *  Hovedprogram.
+ *  Hovedprogram
+ * 
+ * @see Kunder::lesFraFil()
+ * @see Kunder::skrivTilFil()
+ * @see Kunder::handling()
+ * @see Kategorier::lesFraFil()
+ * @see Kategorier::skrivTilFil()
+ * @see Kategorier::handling()
+ * @see skrivMeny()
  */
 int main()  {
 

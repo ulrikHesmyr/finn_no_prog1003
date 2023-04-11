@@ -12,11 +12,15 @@
 #include "enum.h"
 #include <fstream>
 
+/**
+ * BruktTing (med alder og kvaliteten på tingen)
+*/
 class BruktTing : public NyTing{
     private:
         int alder;
         enum Kvalitet kvaliteten;
     public:
+        BruktTing(int tingNr, int selgerensNr);
         BruktTing(std::ifstream & inn);
         enum Kvalitet hentKvalitet(char k);
         char hentChar(enum Kvalitet k);

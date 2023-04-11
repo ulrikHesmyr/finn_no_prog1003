@@ -8,6 +8,9 @@
 
 #include "kategorier.h"
 #include "kategori.h"
+#include "kunder.h"
+#include "kunde.h"
+
 #include "LesData3.h"
 #include <iostream>
 #include <vector>
@@ -15,6 +18,8 @@
 
 
 using namespace std;
+
+extern Kunder gKundebase;
 
 /**
  * Constructor for klassen Kategorier
@@ -106,7 +111,11 @@ void Kategorier::skrivMeny(char valg){
                 << "\tE - Endre ting\n"
                 << "\tQ - G\x8F til hovedmenyen\n";
             break;
-        default: break;
+        case 'K':
+            break;
+        default: 
+            cout << "\n\tKommando ikke tillat!\n";
+            break;
     }
 }
 
@@ -145,7 +154,7 @@ void Kategorier::lesFraFil(){
     innFil.open("KATEGORIER.DTA");
 
     if(innFil){
-        cout << "\n\tLeser fra filen KATEGORIER.DTA..." << endl;
+        cout << "\tLeser fra filen KATEGORIER.DTA..." << endl;
         string kategori;
         getline(innFil, kategori);
         while(!innFil.eof()){
@@ -162,6 +171,7 @@ void Kategorier::lesFraFil(){
                     }
                 }
             }
+            sisteNr++;
             getline(innFil, kategori);
         }
     }
@@ -178,7 +188,7 @@ void Kategorier::skrivTilFil(){
     utFil.open("KATEGORIER.DTA");
 
     if(utFil){
-        cout << "\n\tSkriver til Filen KATEGORIER.DTA\n";
+        cout << "\n\tSkriver til Filen KATEGORIER.DTA...\n";
 
         //Skriver ut for hver kategori
         for(auto & kat: kategoriene){
@@ -190,15 +200,83 @@ void Kategorier::skrivTilFil(){
 
 }
 
+/**
+ * Spør etter kjøperens nummer og leser inn entydig kategori navn og 
+ * skriver deretter hele navnet på kategorien, antall ting til salgs i den og data.
+ * Etter det, velger kjøperen hvilket produkt som skal kjøpes.
+ * 
+ * @see Kunder::antall()
+ * @see Kategorier::skrivAlleKategorier()
+ * @see Kategorier::hentEntydigKategori()
+ * @see Kategori::kjopTing(...)
+*/
 void Kategorier::kjopTing(){
+    int kjoperensNummer = lesInt("\nKjoperens nummer", 1, gKundebase.antall());
+    Kategorier::skrivAlleKategorier();
+
+    string onsketKategori = Kategorier::hentEntydigKategori();
+
+    //Skriver data om den valgte kategorien
+    for(auto & val: kategoriene){
+        if(val.first == onsketKategori){
+            cout << val.first << endl;
+            val.second->kjopTing(sisteNr, kjoperensNummer);
+        }
+    }
 
 };
 
+/**
+ * Skriver alle ting for en vilkårlig og entydig kategori og henter deretter en vilkårlig 
+ * og entydig kategori fra brukeren. Dette gjøres slik at brukeren kan endre på en av tingene
+ * under denne valgte kategorien
+ * 
+ * @see Kategorier::skrivAlleKategorier()
+ * @see Kategorier::hentEntydigKategori()
+ * @see Kategori::endreTing(...)
+*/
 void Kategorier::endreTing(){
+    Kategorier::skrivAlleKategorier();
+    string onsketKategori = Kategorier::hentEntydigKategori();
 
+    for(auto & kat: kategoriene){
+        if(kat.first == onsketKategori){
+            cout << "\n" << onsketKategori << endl;
+            kat.second->endreTing(sisteNr);
+        }
+    }
 };
 
+/**
+ * Oppretter en ny eller en brukt ting innenfor en eksisterende og vilkårlig kategori
+ * og legges inn i tingene for denne kategorien
+ * 
+ * Entydig kategori
+ * Henter selgerens kundenummer
+ * Sjekk om dette kundenummeret eksisterer
+ * Spør om tingen er brukt eller ny
+ * Les inn data
+ * Legg inn i nyeTing for den gjeldende kategorien
+ * 
+ * @see Kategorier::skrivAlleKategorier()
+ * @see Kategorier::hentEntydigKategori()
+ * @see Kunder::hentKunde()
+ * @see Kategori::nyTing(...)
+*/
 void Kategorier::nyTing(){
+
+    Kategorier::skrivAlleKategorier();
+    string onsketKategori = Kategorier::hentEntydigKategori();
+
+    int selgerNr = gKundebase.hentKunde();
+
+    for(auto & val: kategoriene){
+        if(val.first == onsketKategori){
+            cout << "\n" << onsketKategori << endl;
+            val.second->nyTing(sisteNr+1, selgerNr);
+            sisteNr++; 
+        }
+    }
 
 };
 
@@ -206,6 +284,7 @@ void Kategorier::nyTing(){
  * Skriver data om en gitt kategori dersom det er funn for en entydig navngitt kategori.
  * 
  * @see Kategorier::skrivAlleKategorier()
+ * @see Kategorier::hentEntydigKategori()
  * @see Kategori::skrivData()
 */
 void Kategorier::skrivKategori(){
@@ -213,14 +292,31 @@ void Kategorier::skrivKategori(){
     //Skriver ut alle kategorier og initierer lokale variable
     Kategorier::skrivAlleKategorier();
 
+    string onsketKategori = Kategorier::hentEntydigKategori();
+
+    //Skriver data om den valgte kategorien
+    for(auto & val: kategoriene){
+        if(val.first == onsketKategori){
+            cout << val.first << endl;
+            val.second->skrivData();
+        }
+    }
+};
+
+/**
+ * Henter navnet på en entydig kategori ut ifra brukerens input ved å sammenligne input
+ * som en substring av det originale navnet til en kategori. Dersom det kan være flere muligheter
+ * så startes prosessen med å finne en entydig kategori, på nytt
+ * 
+ * @return string - navnet på entydig kategori
+*/
+string Kategorier::hentEntydigKategori(){
+    
     bool gyldigFunn = false;
-    char finnKategori = 'J';
     string onsketKategori;
 
-    
-
     //Henter kategori fra bruker og ser etter funn
-    while(!gyldigFunn && finnKategori == 'J'){
+    while(!gyldigFunn){
         cout << "\nSkriv inn kategori: "; getline(cin, onsketKategori);
 
         //Gjør om string fra input til lowercase
@@ -233,14 +329,15 @@ void Kategorier::skrivKategori(){
         //Dersom det er treff for en substring, så legges kategorien i potensielle matcher
         for(auto & val: kategoriene){
 
-            //Gjør om første bokstaven i kategorien til lowercase
+            //Gjør om hele kategorien til lowercase
             string kategoriNavn = val.first;
-            kategoriNavn[0] = tolower(kategoriNavn[0]);
+            for(int i = 0; i < onsketKategori.size(); i++){
+                kategoriNavn[i] = tolower(kategoriNavn[i]);
+            }
 
             //Ser om det er en match for en substring fra input stringen
             if(kategoriNavn.find(onsketKategori) == 0){
                 gyldigFunn = true;
-                finnKategori == 'N';
                 potensielleKategorier.push_back(val.first);
             }
         }
@@ -252,22 +349,15 @@ void Kategorier::skrivKategori(){
         } else if(potensielleKategorier.size() == 1) {
             onsketKategori = potensielleKategorier[0];
             gyldigFunn = true;
+            return onsketKategori;
         }
 
         if(!gyldigFunn){
-            finnKategori = lesChar("\nIngen funn. Prøv på nytt? (J)a/(N)ei");
+            cout << "\n\tIngen funn p\x8F \"" << onsketKategori << "\"\n";
         }
-    
+        
     }
-
-    //Skriver data om den valgte kategorien
-    for(auto & val: kategoriene){
-        if(val.first == onsketKategori){
-            cout << val.first << endl;
-            val.second->skrivData();
-        }
-    }
-};
+}
 
 /**
  * Skriver ut navn på alle kategoriene og antall ting til salgs for denne kategorien
@@ -282,7 +372,7 @@ void Kategorier::skrivAlleKategorier(){
 
         //Går igjennom alle kategoriene og skriver ut navn og antall til salgs
         for(auto & kat: kategoriene){
-            cout << "\n" << kat.first << right << setw(6) << 
+            cout << "\n" << kat.first << right<< setw(10) << right << setw(6) <<
             kat.second->antallTilSalgs();
         }
     } else {

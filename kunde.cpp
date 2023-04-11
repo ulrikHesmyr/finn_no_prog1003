@@ -18,6 +18,7 @@ using namespace std;
  * Kunde constructor hvor nytt objekt av classen initieres med et unikt 
  * kundenummer
  * 
+ * @param kNr - kundens unike nummer
 */
 Kunde::Kunde(int kNr){
     kundeNr = kNr;
@@ -27,7 +28,7 @@ Kunde::Kunde(int kNr){
 
 /**
  * Leser data om kunde fra fil. Dataen leses fra post på følgende format:
- * antallTilSalgs antallTingKjopt antallTingSolgt mobilnummer postnummer
+ * (kundens nummer) antallTilSalgs antallTingKjopt antallTingSolgt mobilnummer postnummer
  * navn
  * gateadresse
  * poststed
@@ -86,8 +87,6 @@ void Kunde::skrivTilFil(std::ofstream & ut){
 
 /**
  * Leser data for opprettelse av ny kunde
- * 
- * @see lesInt(...)
 */
 void Kunde::lesData(){ 
     cout << "\n\tNavn p\x8F kunde:"; getline(cin, navn);
@@ -137,4 +136,33 @@ bool Kunde::finnKunde(int kNr){
     } else {
         return false;
     }
+}
+
+/**
+ * Øker antallet kunden har kjøpt
+*/
+void Kunde::kjop(){
+    antallTingKjopt++;
+}
+
+/**
+ * Minker antallet ting kunden har til salgs og øker antall ting solgt
+*/
+void Kunde::salg(){
+    antallTingSolgt++;
+}
+
+/**
+ * Dersom det har gått tomt for antall av en vilkårlig ting, så minkes antall til salgs
+*/
+void Kunde::minkAntallTilSalgs(){
+    antallTilSalgs--;
+}
+
+
+/**
+ * Dersom en kunde oppretter ny ting, så øker antallet for ting til salgs
+*/
+void Kunde::okAntallTilSalgs(){
+    antallTilSalgs++;
 }

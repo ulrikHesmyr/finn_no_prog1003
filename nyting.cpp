@@ -1,13 +1,15 @@
 /**
- * Funksjon for aa lage ny kunde
+ * Fil for innmaten av public funksjoner av classen NyTing
  *
  * @file nyting.cpp
  * @author Mathilde, Oliver og Ulrik, NTNU
  */
 
 #include "nyting.h"
+#include "const.h"
 #include "kunder.h"
-#include "list"
+#include "kunde.h"
+
 #include "LesData3.h"
 #include <iostream>
 #include <fstream>
@@ -57,60 +59,24 @@ void NyTing::skrivTilFil(ofstream & ut){
 
 /**
  * Constructor for opprettelse av et objekt av klassen NyTing
+ * 
+ * @param tingNr - Tingens unike nummer
+ * @param selgerensNr - Selgerens unike kundenummer
 */
-NyTing::NyTing(int tingNr){
+NyTing::NyTing(int tingNr, int selgerensNr){
 	nr = tingNr;
+    selgerNr = selgerensNr;
 };
 
 /**
  * Leser data for objektet av klassen NyTing etter opprettelsen
- * 
- * @see Kunder::skrivAlleKunder()
- * @see Kunder::antall()
- * @see lesInt()
 */
 void NyTing::lesData(){
-	cout << "Tilgjengelige selgere:\n";
-	gKundebase.skrivAlleKunder();
-	selgerNr = lesInt("\nOppgi selgerNr: ", 1, gKundebase.antall());
+    cout << "\nNavn p\x8F gjenstand: "; getline(cin, navn);
+    cout << "\nBeskrivelse av gjenstand: "; getline(cin, beskrivelse);
+    pris = lesInt("\nPris p\x8F gjenstand", MINPRIS, MAKSPRIS);
+    antallTilSalgs = lesInt("\nAntall til salgs", 1, MAKSANTALL);
 }
-
-
-/**
- *  Skriver ut alle tingene i en entydig og gyldig valgt kategori, og
- *  gir mulighet til å endre på de forskjellige elementene p ting som velges.
- *
- *  @param  tingListe - Peker til hele listen med ting
- *  @param  tingPeker - Peker til �n ting
- * ? @param  tingSkrivData() - Skriver ut all data for en ting
- *  @param  i - int som teller opp antall ting i listen
- *
- *  @see    Kategori::finnKategori(...)
-*/
-void NyTing::endreTing()    {
-    
-}
-
-    /**
-    *   Kategori::finnKategori(string k);
-    *       - finner ut om innlest kategori er entydig og gyldig
-    *       - if(true), return k
-    *       - else, return melding om at den ikke er entydig/gyldig
-    */
-
-    /**
-    *   tingPeker = tingListe;  // Peker til �n ting og til hele listen.
-    *                           // Legge til disse i main f�rst? @see eks_33.c
-    *                           // Initierer til listens begynnelse
-    *
-    *   while (tingPeker != NULL)   {       // S� lenge slutten ikke er n�dd
-    *       tingSkrivData(tingPeker);       // Tingen skrives
-    *       tingPeker = tingPeker->neste;   // Videre til neste ting
-    *   }
-    *
-    *
-    *
-    }*/
 
 /**
  * Skriver data om et objekt av klassen NyTing
@@ -132,7 +98,57 @@ void NyTing::skrivTilstand() const {
 
 /**
  * Skriver tallet 1 til fil fordi gjenstanden er ny
+ * 
+ * @return int - Tallet som representerer at tingen er ny
 */
 int NyTing::skrivNyEllerBrukt() const {
     return 1;
+}
+
+/**
+ * Henter det unike nummeret til tingen
+ * 
+ * @return int - Det unike nummeret til gjenstanden
+*/
+int NyTing::hentNr(){
+    return nr;
+}
+
+/**
+ * Henter selgerens unike kundenummer
+ * 
+ * @return int - Selgerens unike kundenummer
+*/
+int NyTing::hentSelgerNr(){
+    return selgerNr;
+}
+
+/**
+ * Henter antall til salgs av tingen
+ * 
+ * @return int - antall av tingen som er til salgs
+*/
+int NyTing::hentAntallAvTing(){
+    return antallTilSalgs;
+}
+
+/**
+ *  hendelser:
+ *          - Kjøperens antallTingKjopt økes med én
+ *          - Selgerens antallTingSolgt økes med én
+ *          
+ *          - Antall av tingen minker med én (evt slettes helt hvis det er 0 igjen)
+ *          - Dersom tingen slettes helt, så minker antallTingTilSalgs for selgeren også
+ * 
+ * Registrerer salget for kunde og selger
+ * 
+ * @param kjoperensNummer - Kjøperens unike kundenummer
+ * @param selgerensNummer - Selgerens unike kundenummer
+ * @see Kunder::salg(...)
+*/
+void NyTing::salg(int kjoperensNummer, int selgerensNummer){
+
+    gKundebase.salg(kjoperensNummer, selgerensNummer, antallTilSalgs-1);
+    antallTilSalgs--;
+
 }
