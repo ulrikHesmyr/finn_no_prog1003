@@ -13,5 +13,4 @@ doxygen
 obj
 bin
 .depend
-Makefile
-REGLER
+Debug
