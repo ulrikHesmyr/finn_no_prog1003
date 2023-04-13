@@ -133,6 +133,7 @@ void Kunder::nyKunde(){
     kunde->lesData();
     kundene.push_back(kunde);
     sisteNr++;
+    cout << "\nNy kunde opprettet!" << endl;
 }
 
 /**

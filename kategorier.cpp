@@ -139,6 +139,8 @@ void Kategorier::nyKategori(){
         if(nyeKategorien){
             cout << "\n\tOpprettet ny kategori: " << navnNyKategori << endl;
         }
+    } else {
+        cout << "\n\tKategorien eksisterer fra for...\n";
     }
 }
 
@@ -268,11 +270,12 @@ void Kategorier::nyTing(){
     Kategorier::skrivAlleKategorier();
     string onsketKategori = Kategorier::hentEntydigKategori();
 
-    int selgerNr = gKundebase.hentKunde();
+    
 
     for(auto & val: kategoriene){
         if(val.first == onsketKategori){
             cout << "\n" << onsketKategori << endl;
+            int selgerNr = gKundebase.hentKunde();
             val.second->nyTing(sisteNr+1, selgerNr);
             sisteNr++; 
         }
